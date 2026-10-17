@@ -40,16 +40,22 @@ ul{margin:0;padding:0;list-style:none}
 
 /* ── 머리그림(글자 SVG) ─────────────────────────────── */
 .hero{position:relative;margin:18px 0 0;border-radius:20px;overflow:hidden;border:1px solid #243242}
-.hero .hv{width:100%;display:block}
-.hcta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:18px 18px 20px;
- background:#121A23;border-top:1px solid #243242}
+.hero .hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hcap{position:relative;z-index:1;text-align:center;padding:clamp(34px,5vw,64px) 20px clamp(26px,3vw,40px)}
+.hcap .kk{display:inline-block;font-size:13px;font-weight:800;letter-spacing:3.4px;color:#F2A33C;
+ background:rgba(242,163,60,.12);border:1px solid #243242;border-radius:999px;padding:5px 15px}
+.hcap h1{color:#fff;font-size:clamp(26px,4vw,52px);margin:16px 0 10px;letter-spacing:-.02em}
+.hcap .sb{color:#9FB2C4;font-size:clamp(15px,1.7vw,20px);margin:0;font-weight:600}
+.hcta{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+ padding:18px 18px 20px;background:rgba(18,26,35,.82);border-top:1px solid #243242}
+ /* ★position 을 주지 않으면 절대배치한 머리그림 SVG 가 단추 위를 덮는다(2026-10-18 캡처로 확인) */
 .hcta a{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;
  font-weight:800;font-size:16px}
 .hcta .p{background:#C6353B;color:#fff}
 .hcta .s{background:#1E2E3C;color:#39D2E3;border:1.5px solid #17B5C9}
 .hcta .ic{width:18px;height:18px}
-.hbadge{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:0 18px 18px;
- background:#121A23}
+.hbadge{position:relative;z-index:1;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;
+ padding:0 18px 18px;background:rgba(18,26,35,.82)}
 .hbadge span{font-size:13px;color:#9FB2C4;background:#161F2A;border:1px solid #243242;
  border-radius:999px;padding:5px 13px;font-weight:700}
 
@@ -186,12 +192,17 @@ section{margin:48px 0}
 @media(max-width:760px){
  body{font-size:16px;padding-bottom:86px}
  .hd1{min-height:58px;gap:10px;flex-wrap:wrap;padding:8px 0}
- .bi{order:1;flex:1 1 auto}
- .tel{order:2;padding:9px 14px;font-size:14px}
+ .bi{order:1;flex:0 0 auto}
+ .bi span{display:none}   /* 좁은 화면에서 영문 꼬리까지 두면 전화 단추가 아랫줄로 밀린다 */
+ .tel{order:2;margin-left:auto;padding:9px 13px;font-size:13.5px}
+ .tel .ic{width:15px;height:15px}
  .nv{order:3;flex:0 0 100%;margin-top:2px}
  .nv a{padding:8px 11px;font-size:14px}
  .ebar .wrap{font-size:12.5px;gap:8px}
  .ebar a{padding:4px 11px;font-size:12.5px}
+ .hcap{padding:26px 16px 20px}
+ .hcap h1{font-size:26px;margin:12px 0 8px}
+ .hcap .sb{font-size:15px}
  .hcta{padding:14px}
  .hcta a{padding:13px 18px;font-size:15px;flex:1 1 auto;justify-content:center}
  .sv,.sp,.gr,.ph{grid-template-columns:1fr}
