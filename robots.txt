@@ -19,6 +19,6 @@ Allow: /
 User-agent: bingbot
 Allow: /
 
-Sitemap: https://clearpipe-solutions.netlify.app/sitemap.xml
-Sitemap: https://clearpipe-solutions.netlify.app/sitemap-hub.xml
-Sitemap: https://clearpipe-solutions.netlify.app/rss.xml
+Sitemap: https://clearpipe-solutions.pages.dev/sitemap.xml
+Sitemap: https://clearpipe-solutions.pages.dev/sitemap-hub.xml
+Sitemap: https://clearpipe-solutions.pages.dev/rss.xml
